@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alert_to_notify_customer_about_sales_call</fullName>
+        <ccEmails>adityajmahajan@gmail.com</ccEmails>
+        <description>Alert to notify customer about sales call</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Customer_Email_Address__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Notify_customer_about_the_sales_call</template>
+    </alerts>
+    <alerts>
+        <fullName>email_alert_for_winning_high</fullName>
+        <ccEmails>adityajmahajan@gmail.com</ccEmails>
+        <description>email alert for winning high deal to raj</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>akatsuki@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Approval_process_templet_for_big_deal</template>
+    </alerts>
+    <alerts>
+        <fullName>opportunity_closed_to_owner</fullName>
+        <description>opportunity closed to owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/opportunity_closed</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>update_approval_status_to_approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>update approval status to approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_approval_status_to_rejected</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>update approval status to rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

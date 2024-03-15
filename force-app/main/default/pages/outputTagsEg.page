@@ -1,0 +1,5 @@
+<apex:page >
+    <apex:form >        
+        <apex:outputLink value="https://facebook.com/">facebook</apex:outputLink>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Needs_Attention_No_action_taken_on_new_lead_within_3_hours</fullName>
+        <description>Needs Attention - No action taken on new lead within 3 hours</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Manager</recipient>
+            <type>roleSubordinates</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Lead_Follow_up</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_to_Lead_onwer</fullName>
+        <description>Send email to Lead onwer</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Notification_of_new_Lead_creation</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Lead_Field_update</fullName>
+        <description>Update Lead Source as Partner Referral</description>
+        <field>LeadSource</field>
+        <literalValue>Partner Referral</literalValue>
+        <name>Lead Field update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>R1</fullName>
+        <actions>
+            <name>Send_email_to_Lead_onwer</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_Field_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Check_new_lead</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Open - Not Contacted</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Needs_Attention_No_action_taken_on_new_lead_within_3_hours</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Pl_ensure_call_to_the_lead_contact_person</name>
+                <type>Task</type>
+            </actions>
+            <offsetFromField>Lead.CreatedDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <tasks>
+        <fullName>Check_new_lead</fullName>
+        <assignedTo>sure100@akatsuki.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>A new lead had been created please check</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Check new lead</subject>
+    </tasks>
+    <tasks>
+        <fullName>Pl_ensure_call_to_the_lead_contact_person</fullName>
+        <assignedTo>ajm@akatsuki.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>Pl ensure call to the lead contact person as no  call is made to the contact in last 3 hours</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Pl ensure call to the lead contact person</subject>
+    </tasks>
+</Workflow>

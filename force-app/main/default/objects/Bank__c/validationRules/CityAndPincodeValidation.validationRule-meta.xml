@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CityAndPincodeValidation</fullName>
+    <active>true</active>
+    <errorConditionFormula>Pincode__c  &lt;&gt; VLOOKUP($ObjectType.CityAndPincode__c.Fields.Pincode__c,  $ObjectType.CityAndPincode__c.Fields.Name  , City__c )</errorConditionFormula>
+    <errorDisplayField>Pincode__c</errorDisplayField>
+    <errorMessage>The entered Pincode does not correspond to the city entered.</errorMessage>
+</ValidationRule>

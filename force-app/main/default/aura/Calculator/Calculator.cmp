@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+        <div class="slds-size_1-of-2 slds-p-right_x-small">
+            <lightning:input type="number" name="input1" label="Enter First Number" placeholder="type here..."/>
+        </div>
+        <div class="slds-size_1-of-2">
+            <lightning:input type="number" name="input2" label="Enter Second Number" placeholder="type here..."/>
+        </div>
+    </div>
+    
+    <div class="slds-align_absolute-center" style="height:5rem">
+    	<lightning:button variant="brand" label="Addition" title="Brand action" onclick="{! c.handleClick }" />
+    </div>
+
+    
+    
+</aura:component>

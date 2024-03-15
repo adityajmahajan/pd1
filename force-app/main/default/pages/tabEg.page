@@ -1,0 +1,10 @@
+<apex:page id="apla_page">
+    <apex:tabPanel switchType="client">
+        <apex:tab label="Home" name="home1" id="pahilaTab">
+            ha mazhya aayushyatla pahila tab ahe. mazha prayatna rahil ki me salesforce madhye itka changla hoyin ki mala mazha swatahchi salseforce consultancy suru karta yeil.
+        </apex:tab>
+        <apex:tab label="Student" name="student1">
+            me salseforce cha sttudent ahe.
+        </apex:tab>
+    </apex:tabPanel>
+</apex:page>

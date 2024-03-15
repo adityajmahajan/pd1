@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>email_to_admin_balance_over_1m</fullName>
+        <description>email to admin balance over 1m</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ajm@akatsuki.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/MarketingProductInquiryResponse</template>
+    </alerts>
+    <rules>
+        <fullName>BankNameWorkflow</fullName>
+        <actions>
+            <name>email_to_admin_balance_over_1m</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Bank__c.Balance__c</field>
+            <operation>greaterThan</operation>
+            <value>1000000</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

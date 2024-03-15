@@ -1,0 +1,16 @@
+<apex:page >
+    <apex:panelGrid id="apli_grid" columns="3" border="3">
+        <apex:outputText value="pahila" id="pahila"></apex:outputText>
+        <apex:outputText value="dusra" id="dusra"></apex:outputText>
+        <apex:outputText value="tisra" id="tisra"></apex:outputText>
+        <apex:panelGroup >
+            <apex:outputText value="chautha" id="chautha"></apex:outputText>
+            <apex:outputText value="pachva" id="pachva"></apex:outputText>
+            <apex:outputText value="sahawa" id="sahawa"></apex:outputText>
+        </apex:panelGroup>
+        
+        <apex:outputText value="satwa" id="satwa"></apex:outputText>
+        <apex:outputText value="aathwa" id="aathwa"></apex:outputText>
+        <apex:outputText value="nauwa" id="nauwa"></apex:outputText>
+    </apex:panelGrid>
+</apex:page>

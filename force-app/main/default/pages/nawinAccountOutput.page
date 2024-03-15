@@ -1,0 +1,22 @@
+<apex:page standardController="Account">
+<apex:form >
+    <apex:pageBlock title="Nawin Account">
+        <apex:pageBlockSection title="Account Information">
+            <apex:outputField value="{!Account.ownerid}"/>
+            <apex:outputField value="{!Account.name}"/>
+            <apex:outputField value="{!Account.rating}"/>
+            <apex:outputField value="{!Account.phone}"/>
+
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection title="Description Information" >
+            <apex:outputField value="{!Account.description}"/>
+            
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Save" action="{!Save}"/>
+            <apex:commandButton value="Cancel" action="{!Cancel}"/>            
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

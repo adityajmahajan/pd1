@@ -1,0 +1,7 @@
+<apex:page >
+    <apex:panelBar >
+        <apex:panelBarItem label="pahila item" onenter="alert('pahila item ghusla');" onleave="alert('pahila item nighala');">Ekdum Mast</apex:panelBarItem>
+        <apex:panelBarItem label="dusra item" onenter="alert('dusra item ghusla');" onleave="alert('dusra item nighala');">Ekdum Mast</apex:panelBarItem>
+        <apex:panelBarItem label="tisra item" onenter="alert('tisra item ghusla');" onleave="alert('tisra item nighala');">Ekdum Mast</apex:panelBarItem>
+    </apex:panelBar>
+</apex:page>

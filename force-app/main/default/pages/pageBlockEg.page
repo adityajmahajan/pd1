@@ -1,0 +1,21 @@
+<apex:page >
+    <apex:form >
+        <apex:pageBlock title="My First Block" >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save"/>
+                <apex:commandButton value="Edit"/>
+                <apex:commandButton value="Cancel"/>                
+               </apex:pageBlockButtons>
+            <apex:pageBlockSection title="First Section" >
+                <apex:pageBlockSectionItem onLabelclick="The name of my company" >Akatsuki</apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >Aditya Mahajan</apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >SFDC DEVELOPER</apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Second Section" >
+                <apex:pageBlockSectionItem onLabelclick="The name of my company" >Akatsuki</apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >Aditya Mahajan</apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >SFDC DEVELOPER</apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,41 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name = "name" type = "String"/>
+    <aura:attribute name = "email" type = "String"/>
+    <aura:attribute name = "phone" type = "String"/>
+    <aura:attribute name = "showDetails" type = "Boolean" default = "false"/>
+    <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+        <div class="slds-size_1-of-2 slds-p-right_x-small">
+            <lightning:input type="String" aura:id="fname" name="input1" label="Enter First Name" placeholder="type here..."/>
+        </div>
+        <div class="slds-size_1-of-2">
+            <lightning:input type="String" aura:id="lname" name="input1" label="Enter Last Name" placeholder="type here..."/>
+        </div>
+        <div class="slds-size_1-of-2 slds-p-right_x-small">            
+            <lightning:input type="String" aura:id="email" name="input1" label="Enter Email" placeholder="example@company.com"/>
+        </div>
+        <div class="slds-size_1-of-2">
+            <lightning:input type="String" aura:id="phone" name="input1" label="Enter Phone no." placeholder="Phone no."/>
+        </div>
+    </div>
+    <div class="slds-align_absolute-center" style="height:5rem">
+        <lightning:button variant="brand" label="Submit" title="Submit" onclick="{! c.handleClick }" />
+        <br/><br/><br/>
+    </div>
+    <div>
+        <aura:if isTrue="{!v.showDetails}">
+            <div class="slds-align_absolute-center" style="height:5rem">
+                Details :-<br/>
+                Name: {!v.name}<br/>
+                Email: {!v.email}<br/>
+                Phone no.: {!v.phone}
+            </div>
+            
+            <aura:set attribute="else">
+                <div class="slds-align_absolute-center" style="height:5rem">
+                    Enter Details
+                </div>
+                
+            </aura:set>
+        </aura:if>
+    </div>
+</aura:component>

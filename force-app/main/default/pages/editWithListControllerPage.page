@@ -1,0 +1,19 @@
+<apex:page standardController="Opportunity" recordSetVar="opps" >
+        <apex:form >
+            <apex:pageBlock >
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="Save The Record" action="{!save}"/>
+                    
+                </apex:pageBlockButtons>
+                <apex:pageBlockTable value="{!opps}" var="o">
+                    <apex:column value="{!o.Name}"/>
+                    <apex:column headerValue="Stage">
+                        <apex:inputField value="{!o.StageName}"/>
+                    </apex:column>
+                    <apex:column headerValue="Closed Date for Opportunity">
+                        <apex:inputField value="{!o.CloseDate}"/>
+                    </apex:column>                    
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:form>
+</apex:page>

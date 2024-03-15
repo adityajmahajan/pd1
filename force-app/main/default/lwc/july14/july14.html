@@ -1,0 +1,16 @@
+<template>
+    <lightning-card>
+        <lightning-input type="number" name="firstnumber" onchange={HandleNumberChange} label="Enter your 1st no" ></lightning-input>
+        <lightning-input type="number" name="secondnumber" onchange={HandleNumberChange} label="Enter your 2nd no" ></lightning-input>
+        <br/>
+        Result: {theResult}
+        <br/>
+        <br/>
+        <br/>
+        <lightning-button-group>
+            <lightning-button label="Addition" onclick={handleClick}></lightning-button>
+            <lightning-button label="Subtraction" onclick={handleClick}></lightning-button>
+            <lightning-button label="Multiplication" onclick={handleClick}></lightning-button>
+        </lightning-button-group>
+    </lightning-card>
+</template>

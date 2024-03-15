@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Promotion_Eligibility__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( (ISPICKVAL( Type__c , &quot;Employee&quot;) &amp;&amp;  Salary__c &gt;10000) ||  (ISPICKVAL( Type__c , &quot;Vendor&quot;) &amp;&amp;  Salary__c &lt; 10000 ) , true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Promotion Eligibility</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
